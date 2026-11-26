@@ -2,7 +2,7 @@
 import { useRef, useState, useEffect } from "react";
 import "./App.css";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://rag-project-xyld.onrender.com";
 
 function App() {
   const fileInput = useRef(null);
