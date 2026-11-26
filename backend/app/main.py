@@ -21,6 +21,7 @@ app.add_middleware(
         "http://localhost:5174",
         "https://rag-project-mwldxilji-team-abhishek.vercel.app",
         "https://rag-project-i102pfcgq-team-abhishek.vercel.app",
+        "https://rag-project-puce-nu.vercel.app",
         "https://rag-project-git-main-team-abhishek.vercel.app"
     ],
     allow_credentials=True,
