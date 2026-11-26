@@ -11,6 +11,7 @@ from qdrant_client.http.models import (
 from langchain_qdrant import QdrantVectorStore
 from langchain_core.documents import Document
 from langchain_community.embeddings import FastEmbedEmbeddings
+from qdrant_client.http.models import PayloadSchemaType
 
 
 # Qdrant Cloud / Local database
@@ -63,7 +64,14 @@ def store_chunks(chunks: list[str], filename: str):
                 distance=Distance.COSINE
             )
         )
-
+    
+        # Create keyword index for filename filtering
+    client.create_payload_index(
+        collection_name=COLLECTION_NAME,
+        field_name="metadata.source",
+        field_schema=PayloadSchemaType.KEYWORD,
+        wait=True
+    )
     # Connect to Qdrant collection
     vector_store = QdrantVectorStore(
         client=client,
