@@ -1,0 +1,26 @@
+
+# Environment and secret keys
+.env
+.env.*
+!.env.example
+
+# Python virtual environments
+.venv/
+venv/
+**/venv/
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Local Qdrant database
+backend/qdrant_db/
+**/qdrant_db/
+
+# Frontend dependencies and build
+frontend/node_modules/
+frontend/dist/
+
+# Other
+.DS_Store
