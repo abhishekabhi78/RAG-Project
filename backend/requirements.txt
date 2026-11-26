@@ -47,3 +47,6 @@ tiktoken
 pytest
 pytest-asyncio
 ruff
+
+
+google-genai
