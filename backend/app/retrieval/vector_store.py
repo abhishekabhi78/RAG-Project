@@ -1,4 +1,4 @@
-
+import os
 from qdrant_client import QdrantClient
 from qdrant_client.http.models import (
     Distance,
@@ -13,8 +13,17 @@ from langchain_core.documents import Document
 from langchain_community.embeddings import FastEmbedEmbeddings
 
 
-# Local Qdrant database
-client = QdrantClient(path="./qdrant_db")
+# Qdrant Cloud / Local database
+QDRANT_URL = os.getenv("QDRANT_URL")
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
+
+if QDRANT_URL and QDRANT_API_KEY:
+    client = QdrantClient(
+        url=QDRANT_URL,
+        api_key=QDRANT_API_KEY
+    )
+else:
+    client = QdrantClient(path="./qdrant_db")
 
 # Embedding model
 embeddings = FastEmbedEmbeddings(
