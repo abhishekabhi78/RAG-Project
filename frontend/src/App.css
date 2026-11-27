@@ -1145,3 +1145,37 @@ button {
   box-shadow: none !important;
   border: none !important;
 }
+
+
+/* Fix AI answer alignment and bullet spacing */
+.docbox-message.assistant .message-text {
+  text-align: left !important;
+}
+
+.message-text ul,
+.message-text ol {
+  padding-left: 24px;
+  margin: 10px 0 16px;
+  text-align: left !important;
+  list-style-position: outside;
+}
+
+.message-text li {
+  text-align: left !important;
+  padding-left: 4px;
+  margin-bottom: 8px;
+}
+
+.message-text li p {
+  margin-bottom: 6px;
+}
+
+/* Keep headings and paragraphs aligned consistently */
+.message-text h1,
+.message-text h2,
+.message-text h3,
+.message-text h4,
+.message-text p {
+  text-align: left;
+}
+
