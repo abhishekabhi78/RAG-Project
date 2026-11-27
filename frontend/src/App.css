@@ -591,13 +591,133 @@ button {
   font-weight: 700;
 }
 
+
 .message-text {
   color: #343a44;
-  font-size: 14px;
-  line-height: 1.75;
+  font-size: 15px;
+  line-height: 1.8;
   overflow-wrap: anywhere;
-  white-space: pre-wrap;
+  white-space: normal;
 }
+
+/* Paragraphs */
+.message-text p {
+  margin: 0 0 14px;
+}
+
+/* Headings */
+.message-text h1,
+.message-text h2,
+.message-text h3,
+.message-text h4 {
+  color: #171b25;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 24px 0 12px;
+}
+
+.message-text h1 {
+  font-size: 23px;
+}
+
+.message-text h2 {
+  font-size: 19px;
+}
+
+.message-text h3 {
+  font-size: 17px;
+}
+
+.message-text h4 {
+  font-size: 15px;
+}
+
+/* Bold text */
+.message-text strong {
+  color: #171b25;
+  font-weight: 700;
+}
+
+/* Lists */
+.message-text ul,
+.message-text ol {
+  padding-left: 25px;
+  margin: 10px 0 18px;
+}
+
+.message-text li {
+  padding-left: 4px;
+  margin-bottom: 8px;
+}
+
+/* Tables */
+.message-text table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 14px;
+  display: block;
+  overflow-x: auto;
+}
+
+.message-text th,
+.message-text td {
+  border: 1px solid #e5e7eb;
+  padding: 11px 13px;
+  text-align: left;
+}
+
+.message-text th {
+  background: #f5f6f8;
+  color: #171b25;
+  font-weight: 700;
+}
+
+/* Blockquotes */
+.message-text blockquote {
+  border-left: 3px solid #64748b;
+  padding: 8px 16px;
+  margin: 16px 0;
+  background: #f8fafc;
+  color: #475569;
+}
+
+/* Code */
+.message-text code {
+  background: #f1f3f5;
+  padding: 3px 6px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.message-text pre {
+  background: #f6f7f9;
+  padding: 16px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.message-text pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* Divider */
+.message-text hr {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 22px 0;
+}
+
+/* Clean first and last spacing */
+.message-text > :first-child {
+  margin-top: 0;
+}
+
+.message-text > :last-child {
+  margin-bottom: 0;
+}
+
 
 .message-sources {
   display: flex;
@@ -1009,4 +1129,19 @@ button {
 .docbox-sidebar::-webkit-scrollbar-thumb:hover {
   background: #b5bac2 !important;
   background-clip: padding-box;
+}
+
+/* Remove background from AI answer elements */
+.message-text th,
+.message-text blockquote,
+.message-text code,
+.message-text pre {
+  background: transparent !important;
+}
+
+/* Remove background from AI assistant message */
+.docbox-message.assistant .message-bubble {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
 }

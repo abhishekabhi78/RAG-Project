@@ -1,4 +1,5 @@
-
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { useRef, useState, useEffect } from "react";
 import "./App.css";
 
@@ -342,17 +343,19 @@ const openChat = (chat) => {
                     <div className="message-bubble">
 
                       {message.role === "user" && (
-          <div className="message-author">You</div>
-        )}
-                  {message.attachment && (
-  <div className="chat-attachment">
-    <span>📄</span>
-    <span>{message.attachment}</span>
-  </div>
-)}
-                      <div className="message-text">
-                        {message.content}
-                      </div>
+                    <div className="message-author">You</div>
+                     )}
+             {message.attachment && (
+              <div className="chat-attachment">
+               <span>📄</span>
+              <span>{message.attachment}</span>
+                </div>
+               )}
+                <div className="message-text">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {message.content}
+                </ReactMarkdown>
+                </div>
 
                     </div>
                   </div>
